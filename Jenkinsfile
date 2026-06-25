@@ -45,7 +45,14 @@ pipeline {
                 }
             }
         }
-
+        stage('K8S Debug') {
+            steps {
+               sh 'whoami'
+               sh 'kubectl config current-context'
+               sh 'kubectl cluster-info'
+               sh 'kubectl get nodes'
+    }
+}
         stage('Deploy Helm') {
             steps {
                 sh """
