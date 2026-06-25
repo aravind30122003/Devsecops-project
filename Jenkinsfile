@@ -10,7 +10,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/aravind30122003/Devsecops-project.git'
+                git branch: 'main',
+            url: 'https://github.com/aravind30122003/Devsecops-project.git'
             }
         }
 
